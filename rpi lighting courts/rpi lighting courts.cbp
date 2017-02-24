@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="rpi lighting courts" />
+		<Option pch_mode="2" />
+		<Option compiler="null" />
+		<Build>
+			<Target title="Release">
+				<Option output="bin/Release/rpi lighting courts" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="null" />
+				<Compiler>
+					<Add directory="include" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Unit filename="../Court.cpp" />
+		<Unit filename="../Court.h" />
+		<Unit filename="../ReadConfig.cpp" />
+		<Unit filename="../ReadConfig.h" />
+		<Unit filename="../apiget.cpp" />
+		<Unit filename="../apiget.h" />
+		<Unit filename="../functions.cpp" />
+		<Unit filename="../functions.h" />
+		<Unit filename="../main.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
