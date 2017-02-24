@@ -55,9 +55,12 @@ void apiget::getAPIinformation()
     if(curl)
     {
         string courtnumber = to_string(CourtNo);
+        //create the query location
         string address = basicURL+"court="+courtnumber;
         //cout<<address<<endl;
         curl_easy_setopt(curl, CURLOPT_URL, address.c_str());
+        //set 10 seconds for the timeout for the whole system
+        curl_easy_setopt(curl, CURLOPT_TIMEOUT_MS, 5000);
         curl_easy_setopt(curl,CURLOPT_HTTPHEADER ,list);
          /* use a GET to fetch this */
         curl_easy_setopt(curl, CURLOPT_HTTPGET, 1L);
@@ -72,8 +75,11 @@ void apiget::getAPIinformation()
         res = curl_easy_perform(curl);
         /* Check for errors */
         if(res != CURLE_OK)
-          fprintf(stderr, "curl_easy_perform() failed: %s\n",
-                  curl_easy_strerror(res));
+        {
+              fprintf(stderr, "curl_easy_perform() failed: %s\n",
+              curl_easy_strerror(res));
+        }
+
 
         /* always cleanup */
         curl_easy_cleanup(curl);

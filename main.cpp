@@ -35,8 +35,11 @@ int main(int argc, char **argv)
         cout<<"Fuck me BCM didn't init"<<endl;
         return 1;
     }
+    //read the config file
 	ReadConfig myConfig ("Courts");
+	//generate a vector of court objects based on the number of courts in config files
     vector<Court> myCourts = GenerateCourts(myConfig);
+    //generates a vector of apiget objects based on the number of courts in the config file
     vector<apiget> myAPIs = GenerateAPI(myConfig);
         // wait a bit
     for (unsigned int i=0;i<myCourts.size();i++)
